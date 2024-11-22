@@ -26,7 +26,7 @@ namespace InteractiveGameForKids.utils
         /// <returns>The round duration time as integer in seconds</returns>
         public int GetRoundDurationInSeconds()
         {
-            return -1; // todo: implement content to method
+            return DataHandler.GetInstance().ReadFromXML<int>(FILE_PATH, "roundDuration");
         }
 
         /// <summary>
