@@ -70,6 +70,26 @@ namespace InteractiveGameForKids.utils
         }
 
         /// <summary>
+        /// Updates the round duration (in seconds) in the settings XML file.
+        /// </summary>
+        /// <param name="value">The new round duration in seconds to be saved.</param>
+        public void UpdateRoundDurationInSeconds(int value)
+        {
+            DataHandler.GetInstance().SaveInXML<int>(FILE_PATH, "roundDuration", value);
+            roundDurationInSeconds = value;
+        }
+
+        // <summary>
+        /// Updates the difficulty level in the settings XML file.
+        /// </summary>
+        /// <param name="value">The new difficulty level to be saved as a `Difficulty` enum value.</param>
+        public void UpdateDifficulty(Difficulty value)
+        {
+            DataHandler.GetInstance().SaveInXML<Difficulty>(FILE_PATH, "difficulty", value);
+            difficulty = value;
+        }
+
+        /// <summary>
         /// Provides a singleton instance of the SettingsHandler class.
         /// </summary>
         /// <returns>The singleton instance of SettingsHandler.</returns>
