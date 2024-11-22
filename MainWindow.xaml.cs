@@ -24,5 +24,14 @@ namespace InteractiveGameForKids
         {
             InitializeComponent();
         }
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            StartMenu.Visibility = Visibility.Collapsed;
+            GameArea.Visibility = Visibility.Visible;
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

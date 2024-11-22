@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:InteractiveGameForKids"
         mc:Ignorable="d"
         Title="Interactive Game For Kids" Height="450" Width="800">
+    <Window.Background>
+        <!-- ImageBrush für den Hintergrund -->
+        <ImageBrush ImageSource="Assets/SpielStartbild.png" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid>
+        <Grid x:Name="StartMenu">
+            <TextBlock Text="Willkommen zur Bunten Welt der Tiere!"
+                       HorizontalAlignment="Center" VerticalAlignment="Top" 
+                       FontSize="24" Margin="0,20,0,0" Foreground="White"/>
+            <Button Content="Start"
+                    Width="150" Height="50"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Click="StartButton_Click"/>
+            <Button Content="Einstellungen"
+                    Width="150" Height="50"
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                    Margin="0,0,0,50"
+                    Click="SettingsButton_Click"/>
+        </Grid>
+        <Grid x:Name="GameArea" Visibility="Collapsed">
+            <TextBlock x:Name="GameTitle"
+                       Text="Das Spiel läuft!"
+                       HorizontalAlignment="Center" VerticalAlignment="Top" 
+                       FontSize="24" Margin="0,20,0,0"/>
+        </Grid>
         
     </Grid>
 </Window>
