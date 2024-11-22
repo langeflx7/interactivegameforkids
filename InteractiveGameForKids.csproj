@@ -76,7 +76,6 @@
     <Compile Include="utils\DataHandler.cs" />
     <Compile Include="utils\Difficulty.cs" />
     <Compile Include="utils\SettingsHandler.cs" />
-    <Compile Include="Assets\SpielStartbild.png" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,6 +126,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SpielStartbild.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
