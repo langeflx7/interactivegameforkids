@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using InteractiveGameForKids.utils;
 
 namespace InteractiveGameForKids
@@ -44,6 +45,18 @@ namespace InteractiveGameForKids
             if (int.TryParse(RoundDurationTextBox.Text, out int duration))
             {
                 RoundDurationChanged?.Invoke(duration);
+                RoundDurationTextBox.Background = Brushes.White;
+            }
+            else
+            {
+                if(RoundDurationTextBox.Text.Length == 0)
+                {
+                    RoundDurationChanged?.Invoke(0);
+                }
+                else
+                {
+                    RoundDurationTextBox.Background = Brushes.Red;
+                }
             }
         }
         private void CloseButton_Click(object sender, RoutedEventArgs e)

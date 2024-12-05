@@ -5,21 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InteractiveGameForKids"
         mc:Ignorable="d"
-        Title="Interactive Game For Kids" Height="450" Width="800">
+        Title="Interactive Game For Kids" Height="1000" Width="1800">
     <Window.Background>
         <ImageBrush ImageSource="Assets/SpielStartbild.png" Stretch="UniformToFill"/>
     </Window.Background>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Pink"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid x:Name="StartMenu">
-            <TextBlock Text="Willkommen zur Bunten Welt der Tiere!"
-                       HorizontalAlignment="Center" VerticalAlignment="Top" 
-                       FontSize="24" Margin="0,20,0,0" Foreground="White"/>
+            <Viewbox Stretch="Uniform" VerticalAlignment="Top">
+                <TextBlock Text="Piggie Clicker!"
+                    Foreground="Black"
+                    FontWeight="Bold"
+                    Margin="50,0,50,0"
+                    RenderTransformOrigin="0.515,0.334">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform X="1" Y="1"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Viewbox>
+            <Viewbox Stretch="Uniform" VerticalAlignment="Top">
+                <TextBlock Text="Piggie Clicker!"
+                    Foreground="pink"
+                    FontWeight="Bold"
+                    Margin="50,0,50,0"/>
+            </Viewbox>
             <Button Content="Start"
-                    Width="150" Height="50"
+                    Width="300" Height="100"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Click="StartButton_Click"/>
             <Button Content="Einstellungen"
-                    Width="150" Height="50"
+                    Width="300" Height="100"
                     HorizontalAlignment="Center" VerticalAlignment="Bottom"
                     Margin="0,0,0,50"
                     Click="SettingsButton_Click"/>
@@ -29,7 +67,8 @@
                        Text="Das Spiel läuft!"
                        HorizontalAlignment="Center" VerticalAlignment="Top" 
                        FontSize="24" Margin="0,20,0,0"/>
+            <Canvas x:Name="PigCanvas" Background="Transparent"/>
         </Grid>
-        
+
     </Grid>
 </Window>
