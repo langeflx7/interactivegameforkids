@@ -88,14 +88,21 @@ namespace InteractiveGameForKids
         {
             Button pigButton = new Button
             {
-                Content = "🐷",
                 FontSize = 30,
                 Background = Brushes.Pink,
                 BorderBrush = Brushes.Black,
+                
                 BorderThickness = new Thickness(2),
-                Width = 50,
-                Height = 50
+                Width = 150,
+                Height = 150
             };
+            Image pigImage = new Image
+            {
+                Source = new BitmapImage(new Uri("pack://application:,,,/Assets/SpielSchweinchenBild.png")),
+                Stretch = Stretch.Uniform
+            };
+            pigButton.Content = pigImage;
+
             double x = random.Next(0, (int)(PigCanvas.ActualWidth - pigButton.Width));
             double y = random.Next(0, (int)(PigCanvas.ActualHeight - pigButton.Height));
             Canvas.SetLeft(pigButton, x);
@@ -142,8 +149,6 @@ namespace InteractiveGameForKids
             gameTimer.Stop();
             pigTimer.Stop();
             PigCanvas.Children.Clear();
-
-            MessageBox.Show("Die Runde ist vorbei!");
             StartMenu.Visibility = Visibility.Visible;
             GameArea.Visibility = Visibility.Collapsed;
         }

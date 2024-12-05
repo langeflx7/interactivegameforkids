@@ -145,5 +145,8 @@
   <ItemGroup>
     <Resource Include="Assets\SpielAfterStartBild.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SpielSchweinchenbild.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
