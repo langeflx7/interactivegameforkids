@@ -15,7 +15,7 @@ namespace InteractiveGameForKids.utils
         /// <summary>
         /// Private constructor to enforce the singleton pattern and prevent external instantiation.
         /// </summary>
-        private DataHandler() { }
+        private DataHandler() {}
 
         /// <summary>
         /// Saves a key-value pair to an XML file. If the key already exists, the value will be updated.

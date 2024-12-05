@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="Interactive Game For Kids" Height="450" Width="800">
     <Window.Background>
-        <!-- ImageBrush für den Hintergrund -->
         <ImageBrush ImageSource="Assets/SpielStartbild.png" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
