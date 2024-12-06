@@ -114,6 +114,12 @@ namespace InteractiveGameForKids.utils
             catch (Exception ex)
             {
                 Console.WriteLine($"Error reading from XML: {ex.Message}");
+                if(key.Equals("roundDuration"))
+                {
+                    int roundDurationDefault = 10;
+                    SaveInXML<int>(filePath, key, roundDurationDefault);
+                    return (T)Convert.ChangeType(roundDurationDefault, typeof(T));
+                }
                 return default(T); // Return the default value for the type T (e.g., null, 0, false)
             }
         }

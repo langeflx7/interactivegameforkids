@@ -41,7 +41,7 @@ namespace InteractiveGameForKids
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             var settingsWindow = new SettingsWindow();
-            settingsWindow.SetDifficulty(SettingsHandler.GetInstance().difficulty);
+            /*settingsWindow.SetDifficulty(SettingsHandler.GetInstance().difficulty);
             settingsWindow.SetRoundDuration(SettingsHandler.GetInstance().roundDurationInSeconds);
             settingsWindow.DifficultyChanged += difficulty =>
             {
@@ -51,7 +51,7 @@ namespace InteractiveGameForKids
             settingsWindow.RoundDurationChanged += duration =>
             {
                 SettingsHandler.GetInstance().UpdateRoundDurationInSeconds(duration);
-            };
+            };*/
             settingsWindow.ShowDialog();
         }
     private void StartGame()

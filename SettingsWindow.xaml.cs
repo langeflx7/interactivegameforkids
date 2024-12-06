@@ -14,7 +14,30 @@ namespace InteractiveGameForKids
         public SettingsWindow()
         {
             InitializeComponent();
+
+            LoadDefaults();
+            RegisterSignals();
         }
+
+        private void LoadDefaults()
+        {
+            SetDifficulty(SettingsHandler.GetInstance().difficulty);
+            SetRoundDuration(SettingsHandler.GetInstance().roundDurationInSeconds);
+        }
+
+        private void RegisterSignals()
+        {
+            DifficultyChanged += difficulty =>
+            {
+                SettingsHandler.GetInstance().UpdateDifficulty(difficulty);
+            };
+
+            RoundDurationChanged += duration =>
+            {
+                SettingsHandler.GetInstance().UpdateRoundDurationInSeconds(duration);
+            };
+        }
+
         public void SetDifficulty(Difficulty currentDifficulty)
         {
             foreach (ComboBoxItem item in DifficultyComboBox.Items)
